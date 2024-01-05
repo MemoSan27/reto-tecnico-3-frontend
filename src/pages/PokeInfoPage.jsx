@@ -10,7 +10,7 @@ const PokeInfoPage = () => {
 
   const { id } = useParams();
 
-  const url = `https://reto-tecnico-backend2.onrender.com/pokemons/search/${id}`
+  const url = `http://localhost:3001/pokemons/search/${id}`
   const [ pokemon, getPokemon, , , isLoading ] = useFetch(url);
   
   useEffect( () => {
