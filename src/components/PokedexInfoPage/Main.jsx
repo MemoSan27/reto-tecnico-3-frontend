@@ -5,12 +5,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import PDFGeneratorButton from "./PDFGeneratorButton";
 
 
-const Main = ({ pokemon, isLoading }) => {
-
+const Main = ({ pokemon }) => {
 
   const { id } = useParams();
-  console.log(id)
-  
   const navigate = useNavigate();
 
    const handleBack = () => {

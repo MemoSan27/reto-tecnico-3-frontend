@@ -5,7 +5,6 @@ import './styles/SelectType.css'
 const SelectType = ({ setSelectValue }) => {
 
     const url = 'https://pokeapi.co/api/v2/type'
-
     const [ infotypes, getInfoTypes  ] = useFetch(url)
 
     useEffect (() => {

@@ -5,17 +5,11 @@ import Main from "../components/PokedexInfoPage/Main";
 import StatsSection from "../components/PokedexInfoPage/StatsSection";
 import MovementsSection from "../components/PokedexInfoPage/MovementsSection";
 import Loading from "../components/Loading";
+import { usePokeInfoPage } from "../hooks/usePokeInfoPage";
 
 const PokeInfoPage = () => {
   
-  const [ pokemon, getPokemon, , , isLoading ] = useFetch(url);
-  
-  const { id } = useParams();
-  const url = `/pokemons/search/${id}`
-
-  useEffect( () => {
-    getPokemon()
-  },[])
+  const { pokemon, isLoading } = usePokeInfoPage();
 
   return (
     <>
