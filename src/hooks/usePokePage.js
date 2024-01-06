@@ -77,5 +77,7 @@ export const usePokePage = (selectElement = useRef(), offsetRef = useRef(), limi
       setPage,
       selectElement,
       isLoading,
+      setParam,
+      setParam2
   }
 }

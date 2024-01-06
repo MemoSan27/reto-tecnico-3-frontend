@@ -20,7 +20,9 @@ const PokedexPage = () => {
       perPages,
       selectElement,
       isLoading,
-      setPage
+      setPage,
+      setParam,
+      setParam2,
      } = usePokePage();
   
  
