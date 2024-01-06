@@ -1,12 +1,17 @@
 import { getBackground, getColor } from "../../helpers/helper";
 import Typewriter from 'typewriter-effect';
 import './styles/Main.css'
-import { useNavigate } from "react-router-dom";
-import Loading from "../Loading";
+import { useNavigate, useParams } from "react-router-dom";
+import PDFGeneratorButton from "./PDFGeneratorButton";
+
 
 const Main = ({ pokemon, isLoading }) => {
 
-   const navigate = useNavigate();
+
+  const { id } = useParams();
+  console.log(id)
+  
+  const navigate = useNavigate();
 
    const handleBack = () => {
     window.scrollTo(0,0);
@@ -23,7 +28,10 @@ const Main = ({ pokemon, isLoading }) => {
 
   return (
 
+    
+
     <main style={{ backgroundColor: getBackground(0, pokemon[0])}} className="poke-info__container">
+      <PDFGeneratorButton id={id} pokemon={pokemon?.[0].name}/>
       <div className="poke-info__img">
         <i onClick={handleBack} className='back bx bx-chevrons-left bx-flip-vertical'></i>
         <h1 style={{ color: getColor(0, pokemon[0]) }} className="poke-info__name"> 

@@ -26,8 +26,7 @@ const PokedexPage = () => {
 
   const url = !limit ? '/pokemons' : `/pokemons/paginated?offset=${param}&limit=${param2}`;
   const [ pokemons, getPokemons, getByTypePokemon, filtered, isLoading ] = useFetch(url)
-
-  console.log(url);
+  
   
   const queryParams = () => {
     if((param || param2) < 1 ) return;

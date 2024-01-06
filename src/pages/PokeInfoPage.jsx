@@ -13,6 +13,7 @@ const PokeInfoPage = () => {
   const url = `/pokemons/search/${id}`
   const [ pokemon, getPokemon, , , isLoading ] = useFetch(url);
   
+  
   useEffect( () => {
     getPokemon()
   },[])
