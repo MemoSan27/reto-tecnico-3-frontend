@@ -24,7 +24,7 @@ const PokedexPage = () => {
  
   const trainerName = useSelector(store => store.trainerName)
 
-  const url = !limit ? 'http://localhost:3001/pokemons/' : `http://localhost:3001/pokemons/paginated?offset=${param}&limit=${param2}`;
+  const url = !limit ? '/pokemons' : `/pokemons/paginated?offset=${param}&limit=${param2}`;
   const [ pokemons, getPokemons, getByTypePokemon, filtered, isLoading ] = useFetch(url)
 
   console.log(url);
