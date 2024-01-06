@@ -7,13 +7,12 @@ import MovementsSection from "../components/PokedexInfoPage/MovementsSection";
 import Loading from "../components/Loading";
 
 const PokeInfoPage = () => {
-
-  const { id } = useParams();
-
-  const url = `/pokemons/search/${id}`
+  
   const [ pokemon, getPokemon, , , isLoading ] = useFetch(url);
   
-  
+  const { id } = useParams();
+  const url = `/pokemons/search/${id}`
+
   useEffect( () => {
     getPokemon()
   },[])
