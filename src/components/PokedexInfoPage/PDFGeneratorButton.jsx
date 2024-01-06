@@ -7,19 +7,14 @@ const PDFGeneratorButton = ({id, pokemon}) => {
 
   const handleGeneratePDF = async () => {
     try {
-      // Cambia 'http://tu-servidor/api/generate-pdf' por la URL de tu endpoint en Node.js
-      const response = await axios.get(`/pokemons/search/${id}/detail`, {
-        responseType: 'blob', // Configura el tipo de respuesta como blob (para archivos binarios)
+        const response = await axios.get(`/pokemons/search/${id}/detail`, {
+        responseType: 'blob', 
       });
-
-      // Crea un objeto blob con el contenido del PDF
-      const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
-
-      // Crea un enlace de descarga para el blob del PDF
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(pdfBlob);
-      link.download = `${pokemon}.pdf`;
-      link.click();
+        const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(pdfBlob);
+        link.download = `${pokemon}.pdf`;
+        link.click();
     } catch (error) {
       console.error('Error al generar el PDF:', error.message);
     } finally {
@@ -29,8 +24,8 @@ const PDFGeneratorButton = ({id, pokemon}) => {
 
   return (
     <div>
-      <button onClick={handleGeneratePDF} disabled={loading}>
-        {loading ? 'Generando PDF...' : 'Generar PDF'}
+      <button className='offset__btn generator' onClick={handleGeneratePDF} disabled={loading}>
+        {loading ? 'Generating PDF...' : 'Generate PDF'}
       </button>
     </div>
   );

@@ -177,3 +177,7 @@
     border: 2px solid black;
     font-weight: 900;
 }
+.generator{
+    position: relative;
+    left: 5%;
+}
