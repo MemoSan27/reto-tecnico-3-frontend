@@ -1,16 +1,9 @@
+import { usePagination } from '../../hooks/usePagination';
 import './styles/Pagination.css'
 
 const Pagination = ({quantyPages, page, setPage}) => {
 
-    const handlePrev = () => {
-        window.scrollTo(0,0);
-        setPage(page - 1);
-    }
-
-    const handleNext = () => {
-        window.scrollTo(0,0);
-        setPage(page + 1);
-    }
+    const { handlePrev, handleNext } = usePagination(page, setPage);
 
     return (
        <div className='pages'>

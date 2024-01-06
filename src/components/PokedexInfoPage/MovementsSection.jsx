@@ -4,6 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 
 const MovementsSection = ({ pokemon }) => {
+  
   return (
     <article style={{ backgroundColor: getBackground(0, pokemon[0])}} className="poke-info__container">
     <div className="poke-info__img">
